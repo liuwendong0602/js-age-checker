@@ -1,14 +1,16 @@
 let btn = document.getElementById("btn");
 
-btn.onclick = function(){
-  let input = document.getElementById("ageInput").value;
-  let age = Number(input);
-  let result = document.getElementById("result");
+let inputEl = document.getElementById("ageInput"); 
+let result = document.getElementById("result");
 
-  function showResult(text,color){
-    result.innerText = text;
-    result.style.color = color;
-  }
+function showResult(text, color) {
+  result.innerText = text;
+  result.style.color = color;
+}
+
+btn.onclick = function(){
+  let input = inputEl.value;
+  let age = Number(input);
 
   if (input === "") {
     showResult("请输入年龄", "gray");
@@ -23,3 +25,5 @@ btn.onclick = function(){
   }
 
 }
+
+inputEl.oninput = btn.onclick;
