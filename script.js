@@ -8,6 +8,12 @@ function showResult(text, color) {
   result.style.color = color;
 }
 
+inputEl.onkeydown = function (e) {
+  if (e.key === "Enter") {
+    btn.onclick();
+  }
+};
+
 btn.onclick = function(){
   let input = inputEl.value;
   let age = Number(input);
